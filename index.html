@@ -1,187 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-
-    <!-- 
-      TODO
-
-      Upload your Unemployable (or whatever photo you like) to the assets/images folder
-      and change the name of the image below to match the uploaded one
-
-      Change the title in the <title> tag to whatever you would like the title of your portfolio to be
-
-      This should be the same across all pages.
-     -->
-    <link rel="icon" href="./assets/images/1311.png" />
-		<title>Julie Zhang</title>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./assets/images/IMG_0092-Picsart-AiImageEnhancer.png" />
+    <title>Julie Zhang</title>
     <meta name="description" content="A portfolio template for the Unemployables community.">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/typography.css">
-    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/typography.css" />
+    <link rel="stylesheet" href="./css/utilities.css" />
+    <script defer src="./js/script.js"></script>
+  </head>
 
-		<script defer src="./js/script.js"></script>
-	</head>
-	<body>
+  <body>
     <!-- NAVBAR -->
     <div class="navbar">
       <a class="nav-title-link" href="./index.html">
-        <!-- TODO - Change the "Portfolio Title" to whatever you want displayed in the top left -->
-        <span class="nav-title">Portfolio Title</span>
-         <!-- TODO - Change the email after 'mailto:' to your email address for contact -->
-        <a class="button" href="mailto:juliexzhg@stanford.edu">
-          <span class="button-text">Contact Me</span>
-        </a>
+        <span class="nav-title">Julie Zhang</span>
+      </a>
+      <a class="button" href="mailto:juliexzhg@stanford.edu">
+        <span class="button-text">Contact Me</span>
       </a>
     </div>
 
     <!-- MAIN PAGE CONTENT -->
     <div id="main-content">
 
-<!-- PORTFOLIO HEADER -->
-<div id="portfolio-header" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem; padding: 2rem;">
+      <!-- PORTFOLIO HEADER -->
+      <div id="portfolio-header" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem; padding: 2rem;">
+        
+        <!-- LEFT SIDE: Name, Title, About -->
+        <div id="portfolio-header-text-container" style="flex: 1; min-width: 300px;">
+          <div class="header-text">
+            <span class="main-title">Julie Zhang</span>
+            <div class="body-text">Undergraduate Student @ Stanford</div>
+          </div>
 
-  <!-- LEFT SIDE: Name, Title, About -->
+          <!-- ABOUT SECTION -->
+          <div id="about-section" style="margin-top: 2rem;">
+            <span class="subheader-text" style="font-size: 1rem;">About Me</span>
+            <div class="about-section-content" style="font-size: 0.9rem; line-height: 1.5;">
+              <div class="body-text">
+                I am an incoming Junior at Stanford University intending to major in Computer Science and Science, Technology, and Society. 
+                For the first two years of my undergraduate studies, I was a student at the University of Washington, studying Computer Science 
+                and Political Science, and minoring in Law, Societies, and Justice under the Interdisciplinary Honors Program.
+                <br /><br />
+                I'm broadly interested in the intersection between Computer Science and law, and specifically interested in XXXX. 
+                I've been extremely fortunate to work with and be mentored by Jerry Cao under Shwetak Patel and Jennifer Mankoff of 
+                the Paul G. Allen School of Computer Science and Engineering; Martin Nisser under the Astronautics and Aeronautics 
+                Department at the University of Washington; Inyoung Cheong of the Center for Information and Technology Policy at 
+                Princeton University; Becky Pettit at the University of Texas at Austin Population Research Center; and Helen Gaebler 
+                at the University of Texas at Austin.
+              </div>
+            </div>
+          </div>
+        </div>
 
-	  <!--
-    <a class="button" id="my-work-link" style="margin-top: 1rem;">
-      <span class="button-text">Check out my projects</span> 
-      <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
-    </a>
-	  -->
-
-    <!-- ABOUT SECTION BELOW -->
-    <div id="about-section" style="margin-top: 2rem;">
-      <!--<span class="subheader-text" style="font-size: 1rem;">About Me</span>
-      <div class="about-section-content" style="font-size: 0.9rem; line-height: 1.5;">-->
-        <div class="body-text">I am an incoming Junior at Stanford University majoring in Computer Science. 
-	I am an incoming Junior at Stanford University intending to major in Computer Science and Science, Technology, 
-		and Society. For the first two years of my undergraduate, I was a student at the University of Washington,
-		studying Computer Science and Political Science, minoring in Law, Societies, and Justice under the 
-		Interdisciplinary Honors Program. I'm broadly interested in the intersection between Computer Science
-		and law, and specifically interested in XXXX. I've been extremely fortunate to work with and be mentored 
-		by Jerry Cao under Shwetek Patel and Jennifer Mankoff of the Paul G Allen School of Computer Science and 
-		Engineering, Martin Nisser, under the Astronautics and Aeronautics Department at the University of Washington,
-		Inyoung Cheong of the Center for Information and Technology Policy at Princeton University, Becky Pettit at the 
-		University of Texas at Austin Population Research Center, and Helen Gaebler at the University of Texas at Austin. 
-	</div>
-
-        <!--<div class="body-text" style="margin-top: 1rem;">  </div> -->
+        <!-- RIGHT SIDE: Image -->
+        <div id="portfolio-header-image-container" style="flex-shrink: 0; max-width: 300px;">
+          <img src="./assets/images/1311.png" class="portfolio-header-image" style="width: 100%; height: auto; border-radius: 12px;" />
+          <a class="no-underline" target="_blank" href="https://opensea.io/assets/0xe0be388ab81c47b0f098d2030a1c9ef190691a8a/1311">
+            <span class="image-caption">Unemployables #1311</span>
+          </a>
+        </div>
       </div>
-    </div>
-  </div>
-
-  <!-- RIGHT SIDE: Image -->
-  <div id="portfolio-header-image-container" style="flex-shrink: 0; max-width: 300px;">
-    <img src="./assets/images/1311.png" class="portfolio-header-image" style="width: 100%; height: auto; border-radius: 12px;">
-    <a class="no-underline" target="_blank" href="https://opensea.io/assets/0xe0be388ab81c47b0f098d2030a1c9ef190691a8a/1311">
-    </a>
-  </div>
-</div>
-
-<div id="portfolio-header-text-container" style="flex: 1; min-width: 300px;">
-    <div class="header-text">
-      <span class="main-title">Julie Zhang</span>
-      <div class="body-text">Undergraduate Student @ Stanford</div>
-    </div>
-
-
 
       <!-- PROJECTS / MY WORK SECTION -->
       <div id="my-work-section">
-        <!-- TODO - Change the subheader-text to whatever you want the Projects section header to say -->
         <span class="subheader-text">Updates</span>
-
         <div class="projects-container">
-          <!-- 
-            TODO
-
-            This is where the project cards live. Here's a base level project card for you to copy:
-            <div class="project-card">
-              <img src="./assets/images/IMAGE_NAME" class="project-image">
-              <div class="project-card-text-container">
-                <div class="subheader-text project-title">PROJECT_NAME</div>
-                <div class="body-text project-card-text">SMALL_PROJECT_DESCRIPTION</div>
-              </div>
-              <a class="button" href="./project-pages/PROJECT_PAGE_NAME.html">
-                <span class="button-text">Read More</span>
-                <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-              </a>
+          <!-- Example project card (uncomment + duplicate to add more) -->
+          <!--
+          <div class="project-card">
+            <img src="./assets/images/desktop.jpeg" class="project-image" />
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Project Name</div>
+              <div class="body-text project-card-text">Short description of the project goes here.</div>
             </div>
-
-            - To add a project to the this area, copy the above, paste it below this comment, and change the following:
-                - IMAGE_NAME: the name of the image file in assets/images
-                - PROJECT_NAME: the name of the project (keep it short, it only shows 1 line)
-                - SMALL_PROJECT_DESCRIPTION: a quick project description (max 4 lines)
-                - PROJECT_PAGE_NAME.html: the html filename for the project (must be in project-pages folder)
+            <a class="button" href="./project-pages/project-template.html">
+              <span class="button-text">Read More</span>
+              <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+            </a>
+          </div>
           -->
-         <!-- <div class="project-card">
-            <img src="./assets/images/desktop.jpeg" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Project Name</div>
-              <div class="body-text project-card-text">Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium</div>
-            </div>
-            <a class="button" href="./project-pages/project-template.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
-          <div class="project-card">
-            <img src="./assets/images/code.jpeg" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Project Name</div>
-              <div class="body-text project-card-text">Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium</div>
-            </div>
-            <a class="button" href="./project-pages/project-template.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
-          <div class="project-card">
-            <img src="./assets/images/sketchbook.jpeg" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Super Long Project Name That Should be Hidden</div>
-              <div class="body-text project-card-text">Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium</div>
-            </div>
-            <a class="button" href="./project-pages/project-template.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
         </div>
       </div>
-    </div> 
- -->
+    </div>
 
     <!-- FOOTER -->
     <div id="footer">
-      <!-- 
-        TODO - Change href to your Instagram account (can also delete entire "a" element if no Instagram) 
-
-        This should be the same across all pages.
-      -->
       <a class="icon-link" target="_blank" href="https://twitter.com/whitevans_eth">
-        <image src="./assets/icons/instagram.svg" class="footer-icon"/>
+        <img src="./assets/icons/instagram.svg" class="footer-icon" />
       </a>
-      <!-- 
-        TODO - Change href to your Twitter account (can also delete entire "a" element if no Twitter) 
-      
-        This should be the same across all pages.
-      -->
       <a class="icon-link" target="_blank" href="https://twitter.com/whitevans_eth">
-        <image src="./assets/icons/twitter.svg" class="footer-icon"/>
+        <img src="./assets/icons/twitter.svg" class="footer-icon" />
       </a>
-      <!-- 
-        TODO - Change the email after "mailto" to your contact email 
-      
-        This should be the same across all pages.
-      -->
       <a class="icon-link" href="mailto:juliexzhg@stanford.edu">
-        <image src="./assets/icons/mail.svg" class="footer-icon"/>
+        <img src="./assets/icons/mail.svg" class="footer-icon" />
       </a>
     </div>
-
-	</body>
+  </body>
 </html>
