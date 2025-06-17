@@ -41,36 +41,38 @@
     <div id="main-content">
 
 <!-- PORTFOLIO HEADER -->
-<div id="portfolio-header" style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap; padding: 2rem;">
-  <!-- IMAGE ON THE LEFT -->
+<div id="portfolio-header" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem; padding: 2rem;">
+
+  <!-- LEFT SIDE: Name, Title, About -->
+  <div id="portfolio-header-text-container" style="flex: 1; min-width: 300px;">
+    <div class="header-text">
+      <span class="main-title">Julie Zhang</span>
+      <div class="body-text">Undergraduate Student @ Stanford</div>
+    </div>
+    <a class="button" id="my-work-link" style="margin-top: 1rem;">
+      <span class="button-text">Check out my projects</span> 
+      <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+    </a>
+
+    <!-- ABOUT SECTION BELOW -->
+    <div id="about-section" style="margin-top: 2rem;">
+      <span class="subheader-text" style="font-size: 1rem;">My Background</span>
+      <div class="about-section-content" style="font-size: 0.9rem; line-height: 1.5;">
+        <div class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique risus nec feugiat in fermentum. Sed id semper risus in hendrerit gravida. Placerat duis ultricies lacus sed. Id neque aliquam vestibulum morbi blandit cursus risus.</div>
+        <div class="body-text" style="margin-top: 1rem;">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget gravida. Aliquet nec ullamcorper sit amet. Ac tortor dignissim convallis aenean. Viverra orci sagittis eu volutpat. Massa tincidunt nunc pulvinar sapien et ligula.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE: Image -->
   <div id="portfolio-header-image-container" style="flex-shrink: 0; max-width: 300px;">
     <img src="./assets/images/1311.png" class="portfolio-header-image" style="width: 100%; height: auto; border-radius: 12px;">
     <a class="no-underline" target="_blank" href="https://opensea.io/assets/0xe0be388ab81c47b0f098d2030a1c9ef190691a8a/1311">
       <span class="image-caption">Unemployables #1311</span>
     </a>
   </div>
-
-  <!-- TEXT ON THE RIGHT -->
-  <div id="portfolio-header-text-container" style="flex: 1;">
-    <div class="header-text">
-      <span class="main-title">Julie Zhang</span>
-      <div class="body-text">Undergraduate Student @ Stanford</div>
-    </div>
-    <a class="button" id="my-work-link">
-      <span class="button-text">Check out my projects</span> 
-      <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
-    </a>
-
-    <!-- ABOUT SECTION (now inside the header) -->
-    <div id="about-section" style="margin-top: 1.5rem;">
-      <span class="subheader-text" style="font-size: 1rem;">My Background</span>
-      <div class="about-section-content" style="font-size: 0.9rem; line-height: 1.5;">
-        <div class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique risus nec feugiat in fermentum. Sed id semper risus in hendrerit gravida. Placerat duis ultricies lacus sed. Id neque aliquam vestibulum morbi blandit cursus risus. Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Vitae congue mauris rhoncus aenean vel elit.</div>
-        <div class="body-text" style="margin-top: 1rem;">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget gravida. Aliquet nec ullamcorper sit amet. Aliquet sagittis id consectetur purus. Ac tortor dignissim convallis aenean. Enim neque volutpat ac tincidunt vitae. Lobortis feugiat vivamus at augue. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat. Massa tincidunt nunc pulvinar sapien et ligula. Donec enim diam vulputate ut.</div>
-      </div>
-    </div>
-  </div>
 </div>
+
 
 
       <!-- PROJECTS / MY WORK SECTION -->
