@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Projects — Julie Zhang</title>
+  <meta name="description" content="Projects and writing by Julie Zhang" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/typography.css" />
+  <link rel="stylesheet" href="./css/utilities.css" />
+  <script defer src="./js/script.js"></script>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ──────────────────────────────────────── -->
+  <nav class="navbar">
+    <a class="nav-title-link" href="./index.html">Julie Zhang</a>
+    <div class="nav-links">
+      <a class="nav-link" href="./research.html">Research</a>
+      <a class="nav-link" href="./updates.html">Updates</a>
+      <a class="nav-link" href="./musings.html">Musings</a>
+      <a class="button" href="mailto:juliexzhg@stanford.edu">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- ─── PAGE HEADER ─────────────────────────────── -->
+    <header class="page-header animate-load" style="--delay: 0s">
+      <a class="back-link" href="./index.html">← Home</a>
+      <p class="page-header-label">Projects</p>
+      <!-- ✏️ Edit the title and description below -->
+      <h1 class="page-header-title">Work & Projects</h1>
+      <p class="page-header-desc">
+        Essays, papers, technical projects, and other work I've produced or contributed to.
+      </p>
+    </header>
+
+    <!-- Project cards (auto-rendered from the projects array below) -->
+    <div class="writing-grid" id="projects-grid"></div>
+
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────────── -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a class="icon-link" href="mailto:juliexzhg@stanford.edu" title="Email">
+          <img src="./assets/icons/mail.svg" class="footer-icon" alt="Email" />
+        </a>
+      </div>
+      <p class="footer-text">Julie Zhang &middot; Stanford University</p>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════
+       ✏️  ADD OR EDIT YOUR PROJECTS / WRITING HERE
+       ════════════════════════════════════════════════════
+
+  Each object in the array is one card. Fields:
+    title    (required) – Title of the piece or project
+    venue    (optional) – Publication, conference, or platform; "" to hide
+    date     (optional) – e.g. "October 2025"; "" to hide
+    excerpt  (optional) – A short description or teaser; "" to hide
+    image    (optional) – Path to a cover photo, e.g. "./assets/images/cover.jpg"
+                          Leave "" to show a styled placeholder instead.
+    link     (optional) – URL to read/view; "" to make card non-clickable
+
+  HOW TO ADD A NEW ENTRY:
+    1. Copy a block (from { to },).
+    2. Paste it at the TOP of the array (newest first).
+    3. Fill in your values and save.
+  ════════════════════════════════════════════════════ -->
+  <script>
+
+  const projects = [
+
+    // ════════════════════════════════════════════════
+    // ✏️  ADD YOUR PROJECTS ABOVE THIS LINE
+    // ════════════════════════════════════════════════
+    // Optional `award` field adds a gold badge below the title.
+    // Example: award: "Best Paper Honorable Mention"
+
+    {
+      title: "Opportunities for Teaching and Evaluating Virtual Computer Science Programs in U.S. Prisons",
+      venue: "SIGCSE TS 2027 · Papers Track",
+      date: "2027 (forthcoming)",
+      excerpt: "Examines curriculum design and access infrastructure for introducing computer science courses within U.S. prison systems, and evaluates outcomes of virtual program delivery.",
+      image: "",
+      link: ""
+    },
+
+    {
+      title: "\u201CA Tool for Freedom\u201D: Co-Designing Mobility Aid Improvements Using Personal Fabrication and Physical Interface Modules with Primarily Young Adults",
+      venue: "CHI 2025",
+      date: "2025",
+      excerpt: "Participatory design study co-creating customized mobility aid modifications with young adults who use wheelchairs, leveraging personal fabrication and physical computing.",
+      award: "Best Paper Honorable Mention",
+      image: "",
+      link: "https://dl.acm.org/doi/full/10.1145/3706598.3713366"
+    },
+
+    // ← PASTE NEW ENTRIES ABOVE THIS LINE. Examples:
+    //
+    // Written piece:
+    // {
+    //   title: "Why AI Agents Need Fiduciary Duties",
+    //   venue: "Stanford Daily",
+    //   date: "November 2025",
+    //   excerpt: "As AI systems act autonomously on our behalf, the legal frameworks governing trust relationships must evolve.",
+    //   image: "",
+    //   link: "https://stanforddaily.com/..."
+    // },
+    //
+    // Technical project:
+    // {
+    //   title: "Prison Legal Resource Tool",
+    //   venue: "Personal Project",
+    //   date: "2024",
+    //   excerpt: "A browser extension that helps incarcerated individuals access legal resources through restricted networks.",
+    //   image: "",
+    //   link: "https://github.com/juliexzhang/..."
+    // },
+
+  ];
+
+  // ════════════════════════════════════════════════════
+  // Rendering — no need to edit below this line.
+  // ════════════════════════════════════════════════════
+  const grid = document.getElementById('projects-grid');
+  if (grid) {
+    if (projects.length === 0) {
+      grid.innerHTML = '<p class="empty-state">Projects coming soon.</p>';
+    } else {
+      projects.forEach((item) => {
+        const isLinked = item.link && item.link.trim() !== '';
+        const el = document.createElement(isLinked ? 'a' : 'div');
+        el.className = 'writing-card';
+
+        if (isLinked) {
+          el.href   = item.link;
+          el.target = '_blank';
+          el.rel    = 'noopener';
+        }
+
+        const coverHtml = item.image
+          ? `<img class="writing-card-cover" src="${item.image}" alt="${item.title}" />`
+          : `<div class="writing-card-placeholder">✦</div>`;
+
+        const metaParts = [item.venue, item.date].filter(Boolean);
+        const metaHtml  = metaParts.length
+          ? `<p class="writing-card-meta">${metaParts.join(' &middot; ')}</p>`
+          : '';
+
+        const awardHtml = item.award
+          ? `<div class="writing-card-award">👑 ${item.award}</div>`
+          : '';
+
+        const excerptHtml = item.excerpt
+          ? `<p class="writing-card-excerpt">${item.excerpt}</p>`
+          : '';
+
+        const linkHtml = isLinked
+          ? `<span class="writing-card-link">View ↗</span>`
+          : '';
+
+        el.innerHTML = `
+          ${coverHtml}
+          <div class="writing-card-body">
+            ${metaHtml}
+            <h3 class="writing-card-title">${item.title}</h3>
+            ${awardHtml}
+            ${excerptHtml}
+            ${linkHtml}
+          </div>
+        `;
+
+        grid.appendChild(el);
+      });
+    }
+  }
+
+  </script>
+
+</body>
+</html>

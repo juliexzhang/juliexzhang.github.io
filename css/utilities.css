@@ -1,0 +1,267 @@
+/* =====================================================
+   LOAD ANIMATIONS
+   Elements with .animate-load fade + slide up on page load.
+   Control delay with CSS variable:  style="--delay: 0.2s"
+   ===================================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-load {
+  opacity: 0;
+  animation: fadeInUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+
+/* =====================================================
+   SCROLL ANIMATIONS
+   JS adds .visible when the element enters the viewport.
+   ===================================================== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from the left */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--card-delay, 0s),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--card-delay, 0s);
+}
+
+/* Slide in from the right */
+.slide-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--card-delay, 0s),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--card-delay, 0s);
+}
+
+.slide-left.visible,
+.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger list items when parent becomes visible */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stagger-children.visible > *:nth-child(1)  { transition-delay: 0s;    }
+.stagger-children.visible > *:nth-child(2)  { transition-delay: 0.07s; }
+.stagger-children.visible > *:nth-child(3)  { transition-delay: 0.14s; }
+.stagger-children.visible > *:nth-child(4)  { transition-delay: 0.21s; }
+.stagger-children.visible > *:nth-child(5)  { transition-delay: 0.28s; }
+.stagger-children.visible > *:nth-child(6)  { transition-delay: 0.35s; }
+.stagger-children.visible > *:nth-child(7)  { transition-delay: 0.42s; }
+.stagger-children.visible > *:nth-child(8)  { transition-delay: 0.49s; }
+
+.stagger-children.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  background: var(--nav-bg, rgba(248, 247, 244, 0.94));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border, #E5E3DF);
+}
+
+.nav-title-link {
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: var(--text, #111111);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.nav-title-link:hover {
+  opacity: 0.65;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  overflow: visible;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary, #6B6560);
+  text-decoration: none;
+  transition: color 0.15s ease;
+  padding: 4px 0;
+  border-bottom: 1.5px solid transparent;
+}
+
+.nav-link:hover {
+  color: var(--text, #111111);
+}
+
+.nav-link.active {
+  color: var(--text, #111111);
+  border-bottom-color: var(--accent, #8B7355);
+}
+
+
+/* =====================================================
+   BUTTON
+   ===================================================== */
+a.button {
+  padding: 8px 20px;
+  border: 1.5px solid var(--text, #111111);
+  border-radius: 50px;
+  color: var(--text, #111111);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+a.button:hover {
+  background: var(--text, #111111);
+  color: var(--bg, #F8F7F4);
+}
+
+
+/* =====================================================
+   FOOTER ICONS
+   ===================================================== */
+.footer-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.55;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+a.icon-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+a.icon-link:hover .footer-icon {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+
+/* =====================================================
+   TYPEWRITER CURSOR BLINK
+   ===================================================== */
+.cursor-blink {
+  display: inline-block;
+  margin-left: 1px;
+  color: var(--accent, #8B7355);
+  font-weight: 300;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+
+/* =====================================================
+   BACK LINK (interior pages)
+   ===================================================== */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary, #6B6560);
+  text-decoration: none;
+  margin-bottom: 40px;
+  transition: color 0.15s ease;
+}
+
+.back-link:hover {
+  color: var(--text, #111111);
+}
+
+
+/* =====================================================
+   MISC
+   ===================================================== */
+a.no-underline {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.no-underline:hover {
+  text-decoration: underline;
+}
+
+.right-arrow-icon {
+  width: 14px;
+  height: 14px;
+}
+
+
+/* =====================================================
+   MOBILE NAVBAR
+   ===================================================== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  /* Hide nav text links; keep only the contact button */
+  .nav-link {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 0;
+  }
+
+  .nav-links a.button {
+    display: inline-flex;
+  }
+}

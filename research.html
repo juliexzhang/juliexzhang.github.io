@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Research — Julie Zhang</title>
+  <meta name="description" content="Research by Julie Zhang" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/typography.css" />
+  <link rel="stylesheet" href="./css/utilities.css" />
+  <script defer src="./js/script.js"></script>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ──────────────────────────────────────── -->
+  <nav class="navbar">
+    <a class="nav-title-link" href="./index.html">Julie Zhang</a>
+    <div class="nav-links">
+      <a class="nav-link active" href="./research.html">Research</a>
+      <a class="nav-link" href="./updates.html">Updates</a>
+      <a class="nav-link" href="./musings.html">Musings</a>
+      <a class="button" href="mailto:juliexzhg@stanford.edu">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- ─── PAGE HEADER ─────────────────────────────── -->
+    <header class="page-header animate-load" style="--delay: 0s">
+      <a class="back-link" href="./index.html">← Home</a>
+      <p class="page-header-label">Research</p>
+      <!-- ✏️ Edit the title and description below -->
+      <h1 class="page-header-title">Academic Work</h1>
+      <p class="page-header-desc">
+        My research lies at the intersection of Computer Science and law —
+        with a focus on AI accountability, surveillance policy, and access to education.
+      </p>
+    </header>
+
+    <!-- Intro blurb (rendered from researchIntro below) -->
+    <div id="research-intro-el"></div>
+
+    <!-- Research list (rendered from researchProjects below) -->
+    <div class="research-list" id="research-list"></div>
+
+    <!-- Publications section -->
+    <div class="research-section-sep">Publications</div>
+    <div class="writing-grid" id="publications-grid"></div>
+
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────────── -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a class="icon-link" href="mailto:juliexzhg@stanford.edu" title="Email">
+          <img src="./assets/icons/mail.svg" class="footer-icon" alt="Email" />
+        </a>
+      </div>
+      <p class="footer-text">Julie Zhang &middot; Stanford University</p>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════
+       ✏️  EDIT YOUR RESEARCH CONTENT BELOW
+       ════════════════════════════════════════════════════
+
+  ── INTRO BLURB ────────────────────────────────────────
+  researchIntro: a short paragraph shown above the list.
+  Leave as "" to hide it.
+
+  ── RESEARCH ENTRIES ───────────────────────────────────
+  Each object in researchProjects is one row. Fields:
+    title        (required) – Project name
+    status       (required) – "ongoing" or "completed"
+    institution  (required) – University or organization
+    mentor       (optional) – Advisor name(s); "" to hide
+    description  (optional) – What you're working on; "" to hide
+    image        (optional) – Path to a photo, e.g. "./assets/images/photo.jpg"; "" to hide
+    tags         (optional) – Array of keyword strings
+    link         (optional) – URL to paper/site; "" to hide button
+    linkLabel    (optional) – Button text (default: "View Paper")
+
+  HOW TO ADD A NEW ENTRY:
+    1. Copy one block (from { to },).
+    2. Paste it at the TOP of the array (newest first).
+    3. Fill in your values and save.
+  ════════════════════════════════════════════════════ -->
+  <script>
+
+  const researchIntro = "";
+  // ✏️ Example: const researchIntro = "I am broadly interested in how legal principles can be embedded into the design of technical systems, rather than applied after the fact.";
+
+  const researchProjects = [
+
+    {
+      title: "Signals of Surveillance: A Multivariate Analysis of Surveillance Investment in U.S. Municipalities",
+      status: "completed",
+      institution: "Population Research Center, UT Austin",
+      mentor: "Francisco Rios Casas, Helen Gaebler & Becky Pettit",
+      description: "Investigating the relationship between public investments in surveillance infrastructure and demographic and economic characteristics of U.S. municipalities.",
+      image: "",
+      tags: ["Surveillance", "Demography", "Quantitative Methods"],
+      link: "https://docs.google.com/presentation/d/1D7Wu3-B1AEDWa9UrIYNAyBt7BMgV6vxEfKKji15pMtU/edit?usp=sharing",
+      linkLabel: "View Presentation"
+    },
+
+    {
+      title: "Benchmarking Fiduciary Duties in Agentic AI Systems",
+      status: "ongoing",
+      institution: "Consumer Reports × Princeton × Harvard",
+      mentor: "Inyoung Cheong",
+      description: "Developing operational benchmarks that measure duty of loyalty in AI systems, identifying the components that feed into how current or future AI agentic systems can be deemed \u201Cloyal by design.\u201D",
+      image: "",
+      tags: ["AI Safety", "Agents", "Policy"],
+      link: "https://innovation.consumerreports.org/encoding-loyalty-principles-into-ai-agents-behavior/",
+      linkLabel: "Learn More"
+    },
+
+    {
+      title: "Opportunities for Teaching and Evaluating Virtual Computer Science Programs in U.S. Prisons",
+      status: "ongoing",
+      institution: "Programmable Matter Lab, MIT",
+      mentor: "Martin Nisser",
+      description: "Working on curriculum design and access infrastructure for introducing computer science courses within prison systems.",
+      image: "",
+      tags: ["Prison Education", "CS Education", "Access & Equity"],
+      link: "",
+      linkLabel: ""
+    },
+
+    {
+      title: "\u201CA Tool for Freedom\u201D: Co-Designing Mobility Aid Improvements Using Personal Fabrication and Physical Interface Modules with Primarily Young Adults",
+      status: "completed",
+      institution: "Paul G. Allen School, University of Washington",
+      mentor: "Jerry Cao, Shwetak Patel & Jennifer Mankoff",
+      description: "Participatory design study co-creating customized mobility aid modifications with young adults who use wheelchairs, leveraging personal fabrication and physical computing. Presented at the UW Undergraduate Research Symposium.",
+      award: "CHI 2025 · Best Paper Honorable Mention",
+      image: "",
+      tags: ["HCI", "Fabrication", "Disability"],
+      link: "https://dl.acm.org/doi/full/10.1145/3706598.3713366",
+      linkLabel: "View Paper"
+    },
+
+    // ← PASTE NEW ENTRIES ABOVE THIS LINE
+
+  ];
+
+  // ── PUBLICATIONS ────────────────────────────────────
+  // Each object is one publication card. Fields:
+  //   title   (required)
+  //   venue   (optional) – Conference / journal name
+  //   date    (optional) – e.g. "2025"
+  //   excerpt (optional) – One-sentence abstract
+  //   award   (optional) – e.g. "Best Paper Honorable Mention"
+  //   link    (optional) – DOI / paper URL
+
+  const publications = [
+
+    {
+      title: "Opportunities for Teaching and Evaluating Virtual Computer Science Programs in U.S. Prisons",
+      venue: "SIGCSE TS 2027 \u00b7 Papers Track",
+      date: "2027 (forthcoming)",
+      excerpt: "Examines curriculum design and access infrastructure for introducing computer science courses within U.S. prison systems, and evaluates outcomes of virtual program delivery.",
+      award: "",
+      link: ""
+    },
+
+    {
+      title: "\u201CA Tool for Freedom\u201D: Co-Designing Mobility Aid Improvements Using Personal Fabrication and Physical Interface Modules with Primarily Young Adults",
+      venue: "CHI 2025",
+      date: "2025",
+      excerpt: "Participatory design study co-creating customized mobility aid modifications with young adults who use wheelchairs, leveraging personal fabrication and physical computing.",
+      award: "Best Paper Honorable Mention",
+      link: "https://dl.acm.org/doi/full/10.1145/3706598.3713366"
+    },
+
+  ];
+
+  // ════════════════════════════════════════════════════
+  // Rendering — no need to edit below this line.
+  // ════════════════════════════════════════════════════
+
+  // Render intro blurb
+  if (researchIntro) {
+    const introEl = document.getElementById('research-intro-el');
+    if (introEl) {
+      introEl.className = 'research-intro animate-on-scroll';
+      introEl.textContent = researchIntro;
+    }
+  }
+
+  // Render research items
+  const container = document.getElementById('research-list');
+  if (container) {
+    if (researchProjects.length === 0) {
+      container.innerHTML = '<p class="empty-state">Research coming soon.</p>';
+    } else {
+      researchProjects.forEach((item) => {
+        const el = document.createElement('div');
+        el.className = 'research-item';
+
+        // Normalise status to lowercase for CSS class
+        const statusClass = (item.status || '').toLowerCase();
+        const statusLabel = statusClass === 'ongoing' ? 'Ongoing' : 'Completed';
+
+        const tagsHtml   = (item.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
+        const linkHtml   = item.link
+          ? `<a class="research-link" href="${item.link}" target="_blank" rel="noopener">${item.linkLabel || 'View Paper'} ↗</a>`
+          : '';
+        const descHtml   = item.description ? `<p class="research-desc">${item.description}</p>` : '';
+        const mentorHtml = item.mentor ? `<span class="research-mentor">with ${item.mentor}</span>` : '';
+        const imageHtml  = item.image
+          ? `<img class="research-image" src="${item.image}" alt="${item.title}" />`
+          : '';
+        const awardHtml  = item.award
+          ? `<div class="writing-card-award">👑 ${item.award}</div>`
+          : '';
+
+        el.innerHTML = `
+          <div class="research-meta">
+            <span class="research-status ${statusClass}">${statusLabel}</span>
+            <span class="research-institution">${item.institution}</span>
+            ${mentorHtml}
+          </div>
+          <div class="research-body">
+            <h3 class="research-title">${item.title}</h3>
+            ${awardHtml}
+            ${descHtml}
+            ${imageHtml}
+            ${tagsHtml ? `<div class="research-tags">${tagsHtml}</div>` : ''}
+            ${linkHtml}
+          </div>
+        `;
+
+        container.appendChild(el);
+      });
+    }
+  }
+
+  // Render publications
+  const pubGrid = document.getElementById('publications-grid');
+  if (pubGrid) {
+    if (publications.length === 0) {
+      pubGrid.innerHTML = '<p class="empty-state">Publications coming soon.</p>';
+    } else {
+      publications.forEach((item) => {
+        const isLinked = item.link && item.link.trim() !== '';
+        const el = document.createElement(isLinked ? 'a' : 'div');
+        el.className = 'writing-card';
+        if (isLinked) {
+          el.href   = item.link;
+          el.target = '_blank';
+          el.rel    = 'noopener';
+        }
+
+        const coverHtml   = `<div class="writing-card-placeholder">\u2736</div>`;
+        const metaParts   = [item.venue, item.date].filter(Boolean);
+        const metaHtml    = metaParts.length ? `<p class="writing-card-meta">${metaParts.join(' &middot; ')}</p>` : '';
+        const awardHtml   = item.award ? `<div class="writing-card-award">\uD83D\uDC51 ${item.award}</div>` : '';
+        const excerptHtml = item.excerpt ? `<p class="writing-card-excerpt">${item.excerpt}</p>` : '';
+        const linkHtml    = isLinked ? `<span class="writing-card-link">View \u2197</span>` : '';
+
+        el.innerHTML = `
+          ${coverHtml}
+          <div class="writing-card-body">
+            ${metaHtml}
+            <h3 class="writing-card-title">${item.title}</h3>
+            ${awardHtml}
+            ${excerptHtml}
+            ${linkHtml}
+          </div>
+        `;
+
+        pubGrid.appendChild(el);
+      });
+    }
+  }
+  </script>
+
+</body>
+</html>

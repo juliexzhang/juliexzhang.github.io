@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Musings — Julie Zhang</title>
+  <meta name="description" content="Quotes and musings collected by Julie Zhang" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/typography.css" />
+  <link rel="stylesheet" href="./css/utilities.css" />
+  <script defer src="./js/script.js"></script>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ──────────────────────────────────────── -->
+  <nav class="navbar">
+    <a class="nav-title-link" href="./index.html">Julie Zhang</a>
+    <div class="nav-links">
+      <a class="nav-link" href="./research.html">Research</a>
+      <a class="nav-link" href="./updates.html">Updates</a>
+      <a class="nav-link active" href="./musings.html">Musings</a>
+      <a class="button" href="mailto:juliexzhg@stanford.edu">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- ─── PAGE HEADER ─────────────────────────────── -->
+    <header class="page-header animate-load" style="--delay: 0s">
+      <a class="back-link" href="./index.html">← Home</a>
+      <p class="page-header-label">Musings</p>
+      <!-- ✏️ Edit the title and description below -->
+      <h1 class="page-header-title">Quotes & Ideas</h1>
+      <p class="page-header-desc">
+        Passages, quotes, and ideas that have shaped how I think.
+        Click any card to read more.
+      </p>
+    </header>
+
+    <!-- ─── CAROUSEL (auto-rendered from data below) ── -->
+    <!-- Scroll horizontally · hover to pause · click to expand -->
+    <div class="musings-carousel-outer" id="musings-carousel-outer">
+      <div class="musings-carousel-track" id="musings-track"></div>
+    </div>
+
+    <!-- Expanded detail panel — shown on card click -->
+    <div class="musing-detail-panel" id="musing-detail"></div>
+
+    <!-- Shown only when musings array is empty -->
+    <div class="musings-empty" id="musings-empty" style="display:none">
+      Musings coming soon.
+    </div>
+
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────────── -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a class="icon-link" href="mailto:juliexzhg@stanford.edu" title="Email">
+          <img src="./assets/icons/mail.svg" class="footer-icon" alt="Email" />
+        </a>
+      </div>
+      <p class="footer-text">Julie Zhang &middot; Stanford University</p>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════
+       ✏️  ADD OR EDIT YOUR MUSINGS / QUOTES HERE
+       ════════════════════════════════════════════════════
+
+  Each object in the array is one card in the carousel. Fields:
+    quote   (required) – The quote or passage
+    author  (required) – Who said or wrote it
+    source  (optional) – Book, article, talk, etc.; "" to hide
+    myNote  (optional) – Your personal reflection; "" to hide.
+                          Shown only in the expanded detail view.
+
+  HOW TO ADD A NEW MUSING:
+    1. Copy a block (from { to },).
+    2. Paste it at the TOP of the array.
+    3. Fill in your values and save.
+  ════════════════════════════════════════════════════ -->
+  <script>
+
+  const musings = [
+    {
+      quote: "Human judgements are a critical component at every stage of the modern alignment training pipeline, from curating data and learning from our preferences, to auditing AI systems and overseeing them while they complete tasks for us.",
+      author: "Konstantinos Voudouris, et al.",
+      source:"AI alignment is a human problem",
+      myNote:"Human in the loop"
+    },
+    // ← ADD YOUR QUOTES HERE. Example:
+    // {
+    //   quote: "The question is not whether machines can think, but whether men do.",
+    //   author: "B.F. Skinner",
+    //   source: "Contingencies of Reinforcement, 1969",
+    //   myNote: "This challenges me to think about what agency really means — especially as we build systems that mimic it."
+    // },
+
+  ];
+
+  // ════════════════════════════════════════════════════
+  // Carousel rendering — no need to edit below.
+  // ════════════════════════════════════════════════════
+
+  const track  = document.getElementById('musings-track');
+  const detail = document.getElementById('musing-detail');
+  const empty  = document.getElementById('musings-empty');
+  const outer  = document.getElementById('musings-carousel-outer');
+
+  if (!musings.length) {
+    if (outer)  outer.style.display  = 'none';
+    if (detail) detail.style.display = 'none';
+    if (empty)  empty.style.display  = 'block';
+  } else {
+    // Duplicate items enough times to fill at least ~8 visible cards
+    const copies = Math.max(2, Math.ceil(10 / musings.length));
+    // Must be even so translateX(-50%) loops seamlessly
+    const totalCopies = copies % 2 === 0 ? copies : copies + 1;
+
+    function makeCard(item, originalIndex) {
+      const card = document.createElement('div');
+      card.className = 'musing-card';
+      card.dataset.index = originalIndex;
+      card.innerHTML = `
+        <div class="musing-card-quote">${item.quote}</div>
+        <div class="musing-card-author">&mdash; ${item.author}${item.source ? ', <em>' + item.source + '</em>' : ''}</div>
+        <div class="musing-card-hint">Click to expand ↗</div>
+      `;
+      card.addEventListener('click', () => openDetail(item, originalIndex));
+      return card;
+    }
+
+    for (let c = 0; c < totalCopies; c++) {
+      musings.forEach((item, i) => track.appendChild(makeCard(item, i)));
+    }
+
+    // Adjust animation duration proportional to content length
+    const duration = Math.max(25, musings.length * 8);
+    track.style.animationDuration = duration + 's';
+
+    function openDetail(item, idx) {
+      // Highlight matching cards
+      document.querySelectorAll('.musing-card').forEach(c => {
+        c.classList.toggle('active', parseInt(c.dataset.index) === idx);
+      });
+
+      const noteHtml = item.myNote
+        ? `<p class="musing-note">${item.myNote}</p>`
+        : '';
+      const sourceHtml = item.source
+        ? `<span class="musing-source">${item.source}</span>`
+        : '';
+
+      detail.innerHTML = `
+        <button class="musing-close-btn" onclick="closeDetail()">Close ×</button>
+        <blockquote class="musing-quote">${item.quote}</blockquote>
+        <div class="musing-attribution">
+          <span class="musing-author">&mdash; ${item.author}</span>
+          ${sourceHtml}
+        </div>
+        ${noteHtml}
+      `;
+      detail.style.display = 'block';
+      detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function closeDetail() {
+    const detail = document.getElementById('musing-detail');
+    if (detail) detail.style.display = 'none';
+    document.querySelectorAll('.musing-card').forEach(c => c.classList.remove('active'));
+  }
+
+  </script>
+
+</body>
+</html>

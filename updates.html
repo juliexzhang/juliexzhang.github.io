@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Updates — Julie Zhang</title>
+  <meta name="description" content="Updates from Julie Zhang" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/typography.css" />
+  <link rel="stylesheet" href="./css/utilities.css" />
+  <script defer src="./js/script.js"></script>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ──────────────────────────────────────── -->
+  <nav class="navbar">
+    <a class="nav-title-link" href="./index.html">Julie Zhang</a>
+    <div class="nav-links">
+      <a class="nav-link" href="./research.html">Research</a>
+      <a class="nav-link active" href="./updates.html">Updates</a>
+      <a class="nav-link" href="./musings.html">Musings</a>
+      <a class="button" href="mailto:juliexzhg@stanford.edu">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- ─── PAGE HEADER ─────────────────────────────── -->
+    <header class="page-header animate-load" style="--delay: 0s">
+      <a class="back-link" href="./index.html">← Home</a>
+      <p class="page-header-label">Updates</p>
+      <!-- ✏️ Edit the title and description below -->
+      <h1 class="page-header-title">What's New</h1>
+      <p class="page-header-desc">
+        Conferences, fellowships, transfers, and milestones.
+        Hover the date on entries marked ◉ to preview a photo.
+      </p>
+    </header>
+
+    <!-- Timeline (auto-rendered from the updates array below) -->
+    <div class="updates-timeline" id="updates-timeline"></div>
+
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────────── -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a class="icon-link" href="mailto:juliexzhg@stanford.edu" title="Email">
+          <img src="./assets/icons/mail.svg" class="footer-icon" alt="Email" />
+        </a>
+      </div>
+      <p class="footer-text">Julie Zhang &middot; Stanford University</p>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════
+       ✏️  ADD OR EDIT YOUR UPDATES HERE
+       ════════════════════════════════════════════════════
+
+  Each object is one timeline entry. Fields:
+    date          (required) – e.g. "September 16, 2025"
+    text          (required) – What happened
+    image         (optional) – Path to a photo; "" to hide. When set,
+                               hovering the date shows a photo preview.
+    imageCaption  (optional) – Caption shown inside the photo preview
+
+  HOW TO ADD AN UPDATE:
+    1. Copy a block (from { to },).
+    2. Paste it at the TOP of the array (newest first).
+    3. Fill in your values and save.
+  ════════════════════════════════════════════════════ -->
+  <script>
+
+  const updates = [
+
+    // ── 2026 ──────────────────────────────────────────
+    {
+      date: "October 16, 2026",
+      text: "Attended the Global Portable Memory Workshop, hosted by the Gates Foundation &times; OpenAI &times; Linux &times; Stanford Digital Economy Lab.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "September 2026",
+      text: "Paper on Computer Science Education accepted to SIGCSE 2027.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "August 2026",
+      text: "Started a Research Assistantship at the Legal Design Lab within Stanford Law School.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "August 2026",
+      text: "Completed fellowship at the European Center for Not-for-Profit Law (ECNL); received a return offer (extended to &lt;10% of fellows).",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "July 2026",
+      text: "Learned how to longboard.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "June 2026",
+      text: "Started as Financial Officer for Stanford Education Society.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "May 2026",
+      text: "Accepted to Stanford University&#8217;s Coterminal (M.S.) Program in Computer Science, beginning 2027&#8211;2028.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "May 2026",
+      text: "Joined the Computer Science Student Council as Financial Officer, hosting events with Google, Fieldguide AI, and Wisdm.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "May 2026",
+      text: "Started rock climbing.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "April 2026",
+      text: "Organized the Splash Parent Program. <span class=\"update-aside\">(~60 parents &middot; guest speakers, panelists &amp; mini-teach)</span>",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "April 2026",
+      text: "Taught a class on the Silicon Valley Optimization Mindset to ~40 high school students.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "March 2026",
+      text: "Named a Technology Ethics Practitioner Fellow under the McCoy Family Center for Ethics in Society at Stanford.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "March 2026",
+      text: "Placed as an AI Agent Benchmarks Fellow at the European Center for Not-for-Profit Law (ECNL).",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "March 2026",
+      text: "Named a Rising Birds Fellow.",
+      image: "",
+      imageCaption: ""
+    },
+
+    // ── 2025 ──────────────────────────────────────────
+    {
+      date: "September 16, 2025",
+      text: "Transferred to Stanford University.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "September 7, 2025",
+      text: "Attended the Consumer Reports &times; Stanford Loyal Agents Workshop in Stanford, CA.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "October 2025",
+      text: "Presented surveillance research at the Southern Demographic Association Annual Meeting in Lexington, KY.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "June 1, 2025",
+      text: "Joining the Population Research Center at the University of Texas, Austin, researching the relationship between investments in surveillance systems and crime rates.",
+      image: "./assets/images/UT_Austin_Photo.png",
+      imageCaption: "University of Texas at Austin"
+    },
+    {
+      date: "May 16, 2025",
+      text: "Presented at the Undergraduate Research Symposium for a second time, on my research in Prison Education.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "January 2025",
+      text: "Awarded a Mary Gates Research Scholarship to support my research in Incarcerated Education.",
+      image: "",
+      imageCaption: ""
+    },
+
+    // ── 2024 ──────────────────────────────────────────
+    {
+      date: "September 2024",
+      text: "Paper on Device Fabrication accepted to CHI 2025.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "September 2024",
+      text: "Joined the Programmable Matter Lab under Assistant Professor Martin Nisser, focusing on expanding Computer Science courses within prisons.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "August 2024",
+      text: "Studied abroad in Rome, Italy.",
+      image: "",
+      imageCaption: ""
+    },
+    {
+      date: "June 2024",
+      text: "Awarded an Exploratory Learning Scholarship.",
+      image: "",
+      imageCaption: ""
+    },
+
+    // ── 2023 ──────────────────────────────────────────
+    {
+      date: "June 2023",
+      text: "Graduated from the Robinson Center for Young Scholars Transition School. <span class=\"update-aside\">(Entered university at 14 years old)</span>",
+      image: "",
+      imageCaption: ""
+    },
+
+    // ← PASTE NEW UPDATES ABOVE THIS LINE (newest first)
+
+  ];
+
+  // ════════════════════════════════════════════════════
+  // Rendering — no need to edit below this line.
+  // ════════════════════════════════════════════════════
+
+  // Minimal camera SVG icon (injected next to date for photo entries)
+  const CAMERA_SVG = `<svg class="update-camera-icon" xmlns="http://www.w3.org/2000/svg"
+    width="13" height="13" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+    aria-label="Photo available">
+    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+    <circle cx="12" cy="13" r="4"/>
+  </svg>`;
+
+  const timeline = document.getElementById('updates-timeline');
+
+  if (timeline) {
+    if (updates.length === 0) {
+      timeline.innerHTML = '<p class="empty-state">Updates coming soon.</p>';
+    } else {
+
+      // ── Floating Polaroid-style tooltip ───────────
+      const tooltip = document.createElement('div');
+      tooltip.className = 'image-tooltip';
+      tooltip.innerHTML = `
+        <img id="tooltip-img" src="" alt="" />
+        <div class="image-tooltip-caption" id="tooltip-caption"></div>
+      `;
+      document.body.appendChild(tooltip);
+
+      const tooltipImg = document.getElementById('tooltip-img');
+      const tooltipCap = document.getElementById('tooltip-caption');
+
+      // ── Group entries by year ──────────────────────
+      function extractYear(dateStr) {
+        const m = dateStr.match(/\b(20\d{2})\b/);
+        return m ? m[1] : '—';
+      }
+
+      let currentYear = null;
+      let animIdx     = 0;
+
+      updates.forEach((item) => {
+        const year = extractYear(item.date);
+
+        // Year separator
+        if (year !== currentYear) {
+          currentYear = year;
+          const yearRow = document.createElement('div');
+          yearRow.className = 'timeline-year-row';
+          yearRow.innerHTML = `
+            <span class="timeline-year-label">${year}</span>
+            <div class="timeline-year-line"></div>
+          `;
+          timeline.appendChild(yearRow);
+        }
+
+        // ── Entry ────────────────────────────────────
+        const hasImage = Boolean(item.image);
+        const el = document.createElement('div');
+        el.className = 'update-item' + (hasImage ? ' has-image' : '');
+        el.style.animationDelay = (animIdx * 0.05) + 's';
+        animIdx++;
+
+        // Date row — camera icon appended if photo exists
+        el.innerHTML = `
+          <div class="update-date">
+            ${item.date}
+            ${hasImage ? CAMERA_SVG : ''}
+          </div>
+          <p class="update-text">${item.text}</p>
+        `;
+
+        // ── Image hover on the date (or whole row) ───
+        if (hasImage) {
+          const dateEl = el.querySelector('.update-date');
+
+          function showTooltip(e) {
+            tooltipImg.src         = item.image;
+            tooltipCap.textContent = item.imageCaption || '';
+            tooltipCap.style.display = item.imageCaption ? 'flex' : 'none';
+            tooltip.classList.add('visible');
+            positionTooltip(e);
+          }
+
+          function positionTooltip(e) {
+            const x = Math.min(e.clientX + 28, window.innerWidth  - 250);
+            const y = Math.max(e.clientY - 210, 10);
+            tooltip.style.left = x + 'px';
+            tooltip.style.top  = y + 'px';
+          }
+
+          dateEl.addEventListener('mouseenter', showTooltip);
+          dateEl.addEventListener('mousemove',  positionTooltip);
+          dateEl.addEventListener('mouseleave', () => tooltip.classList.remove('visible'));
+        }
+
+        timeline.appendChild(el);
+      });
+    }
+  }
+
+  </script>
+
+</body>
+</html>

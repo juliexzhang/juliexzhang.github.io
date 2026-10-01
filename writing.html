@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Writing — Julie Zhang</title>
+  <meta name="description" content="Writing by Julie Zhang" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/typography.css" />
+  <link rel="stylesheet" href="./css/utilities.css" />
+  <script defer src="./js/script.js"></script>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ──────────────────────────────────────── -->
+  <nav class="navbar">
+    <a class="nav-title-link" href="./index.html">Julie Zhang</a>
+    <div class="nav-links">
+      <a class="nav-link" href="./research.html">Research</a>
+      <a class="nav-link active" href="./writing.html">Writing</a>
+      <a class="nav-link" href="./updates.html">Updates</a>
+      <a class="nav-link" href="./musings.html">Musings</a>
+      <a class="button" href="mailto:juliexzhg@stanford.edu">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- ─── PAGE HEADER ─────────────────────────────── -->
+    <header class="page-header animate-load" style="--delay: 0s">
+      <a class="back-link" href="./index.html">← Home</a>
+      <p class="page-header-label">Writing</p>
+      <!-- ✏️ Edit the title and description below -->
+      <h1 class="page-header-title">Written Work</h1>
+      <p class="page-header-desc">
+        Essays, op-eds, and articles I've written for publications and on my own.
+      </p>
+    </header>
+
+    <!-- Writing grid (auto-rendered from the writings array below) -->
+    <div class="writing-grid" id="writing-grid"></div>
+
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────────── -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a class="icon-link" href="mailto:juliexzhg@stanford.edu" title="Email">
+          <img src="./assets/icons/mail.svg" class="footer-icon" alt="Email" />
+        </a>
+      </div>
+      <p class="footer-text">Julie Zhang &middot; Stanford University</p>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════
+       ✏️  ADD OR EDIT YOUR WRITTEN WORK HERE
+       ════════════════════════════════════════════════════
+
+  Each object in the array is one card. Fields:
+    title    (required) – Title of the piece
+    venue    (optional) – Publication or where it appeared; "" to hide
+    date     (optional) – When it was published, e.g. "October 2025"; "" to hide
+    excerpt  (optional) – A short teaser sentence or two; "" to hide
+    image    (optional) – Path to a cover photo, e.g. "./assets/images/cover.jpg"
+                          Leave "" to show a styled placeholder instead.
+    link     (optional) – URL to read the full piece; "" to make card non-clickable
+
+  HOW TO ADD A NEW PIECE:
+    1. Copy one block (from { to },).
+    2. Paste it at the TOP of the array (newest first).
+    3. Fill in your values and save.
+  ════════════════════════════════════════════════════ -->
+  <script>
+
+  const writings = [
+
+    // ← ADD YOUR WRITING PIECES HERE. Example:
+    // {
+    //   title: "Why AI Agents Need Fiduciary Duties",
+    //   venue: "Stanford Daily",
+    //   date: "November 2025",
+    //   excerpt: "As AI systems gain the ability to act autonomously on our behalf, the legal frameworks governing trust relationships must evolve.",
+    //   image: "",
+    //   link: "https://stanforddaily.com/..."
+    // },
+
+  ];
+
+  // ════════════════════════════════════════════════════
+  // Rendering — no need to edit below this line.
+  // ════════════════════════════════════════════════════
+  const grid = document.getElementById('writing-grid');
+  if (grid) {
+    if (writings.length === 0) {
+      grid.innerHTML = '<p class="empty-state">Writing coming soon.</p>';
+    } else {
+      writings.forEach((item) => {
+        const isLinked = item.link && item.link.trim() !== '';
+        const el = document.createElement(isLinked ? 'a' : 'div');
+        el.className = 'writing-card';
+
+        if (isLinked) {
+          el.href   = item.link;
+          el.target = '_blank';
+          el.rel    = 'noopener';
+        }
+
+        // Cover image or placeholder
+        const coverHtml = item.image
+          ? `<img class="writing-card-cover" src="${item.image}" alt="${item.title}" />`
+          : `<div class="writing-card-placeholder">✦</div>`;
+
+        // Meta line: venue · date
+        const metaParts = [item.venue, item.date].filter(Boolean);
+        const metaHtml  = metaParts.length
+          ? `<p class="writing-card-meta">${metaParts.join(' &middot; ')}</p>`
+          : '';
+
+        const excerptHtml = item.excerpt
+          ? `<p class="writing-card-excerpt">${item.excerpt}</p>`
+          : '';
+
+        const linkHtml = isLinked
+          ? `<span class="writing-card-link">Read more ↗</span>`
+          : '';
+
+        el.innerHTML = `
+          ${coverHtml}
+          <div class="writing-card-body">
+            ${metaHtml}
+            <h3 class="writing-card-title">${item.title}</h3>
+            ${excerptHtml}
+            ${linkHtml}
+          </div>
+        `;
+
+        grid.appendChild(el);
+      });
+    }
+  }
+
+  </script>
+
+</body>
+</html>

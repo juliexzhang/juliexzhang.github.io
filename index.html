@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Julie Zhang</title>
+  <meta name="description" content="Julie Zhang — CS Undergraduate at Stanford" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/typography.css" />
+  <link rel="stylesheet" href="./css/utilities.css" />
+  <script defer src="./js/script.js"></script>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ──────────────────────────────────────── -->
+  <nav class="navbar">
+    <a class="nav-title-link" href="./index.html">Julie Zhang</a>
+    <div class="nav-links">
+      <a class="nav-link" href="./research.html">Research</a>
+      <a class="nav-link" href="./updates.html">Updates</a>
+      <a class="nav-link" href="./musings.html">Musings</a>
+      <!-- ✏️ Update your email below -->
+      <a class="button" href="mailto:juliexzhg@stanford.edu">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─────────────────────────────────────────── -->
+  <section id="hero">
+    <div id="hero-text">
+      <h1 class="hero-name animate-load" style="--delay: 0s">Julie Zhang</h1>
+
+      <!-- Subtitle cycles through phrases defined in js/script.js -->
+      <div class="hero-subtitle animate-load" style="--delay: 0.18s">
+        <span id="subtitle-text">Computer Science @ Stanford</span>
+        <span class="cursor-blink">|</span>
+      </div>
+
+      <!-- ✏️ Edit your one-line bio below -->
+      <p class="hero-bio animate-load" style="--delay: 0.34s">
+        Broadly interested in the intersection of Computer Science and law,
+        with a focus on creating safeguards for AI agents.
+        Senior at Stanford University.
+      </p>
+
+      <div class="hero-actions animate-load" style="--delay: 0.5s">
+        <a class="button" href="mailto:juliexzhg@stanford.edu">Get in touch</a>
+      </div>
+    </div>
+
+    <!-- ✏️ Replace the image src with your own photo path -->
+    <div id="hero-image" class="animate-load" style="--delay: 0.25s">
+      <img
+        src="./assets/images/IMG_0092-Picsart-AiImageEnhancer.png"
+        alt="Julie Zhang"
+      />
+      <!-- ✏️ Update the caption -->
+      <span class="image-caption">San Francisco Museum of Modern Art</span>
+    </div>
+  </section>
+
+  <!-- ─── SCROLLING MARQUEE ────────────────────────────── -->
+  <!--
+    ✏️ To edit the keywords, update the <span> text below.
+       Keep the <span class="dot">·</span> separators between each.
+       The list is duplicated — update BOTH halves identically.
+  -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <span>Computer Science</span><span class="dot">·</span>
+      <span>Law &amp; Policy</span><span class="dot">·</span>
+      <span>AI Safety</span><span class="dot">·</span>
+      <span>Political Science</span><span class="dot">·</span>
+      <span>Stanford University</span><span class="dot">·</span>
+      <span>Prison Education</span><span class="dot">·</span>
+      <span>Surveillance Technology</span><span class="dot">·</span>
+      <span>Human-Computer Interaction</span><span class="dot">·</span>
+      <!-- Exact duplicate — required for seamless loop -->
+      <span>Computer Science</span><span class="dot">·</span>
+      <span>Law &amp; Policy</span><span class="dot">·</span>
+      <span>AI Safety</span><span class="dot">·</span>
+      <span>Political Science</span><span class="dot">·</span>
+      <span>Stanford University</span><span class="dot">·</span>
+      <span>Prison Education</span><span class="dot">·</span>
+      <span>Surveillance Technology</span><span class="dot">·</span>
+      <span>Human-Computer Interaction</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- ─── ABOUT ──────────────────────────────────────── -->
+    <section class="section-container animate-on-scroll">
+      <p class="section-title">About</p>
+      <!-- ✏️ Edit your full bio below -->
+      <div class="about-text">
+        <p>
+          I am a senior at Stanford University majoring in Computer Science
+          and minoring in Political Science. For the first two years of my undergraduate
+          studies, I was a student at the University of Washington, studying Computer Science
+          and Political Science, and minoring in Law, Societies, and Justice under the
+          Interdisciplinary Honors Program.
+        </p>
+        <p>
+          I believe fundamental legal principles should actively shape technology's meaning,
+          not just react to it, and aim to build systems that define shared boundaries
+          and responsibilities.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── PAGE CARDS ────────────────────────────────── -->
+    <section class="section-container">
+      <p class="section-title animate-on-scroll">Explore</p>
+      <div class="cards-grid cards-grid--three">
+
+        <a href="./research.html" class="page-card slide-left">
+          <div class="card-icon">◎</div>
+          <h3>Research</h3>
+          <p>Academic work at the intersection of CS and law — AI agents, surveillance, and prison education.</p>
+          <span class="card-arrow">→</span>
+        </a>
+
+        <a href="./updates.html" class="page-card slide-left" style="--card-delay: 0.1s">
+          <div class="card-icon">◈</div>
+          <h3>Updates</h3>
+          <p>Conferences, fellowships, transfers, and milestones.</p>
+          <span class="card-arrow">→</span>
+        </a>
+
+        <a href="./musings.html" class="page-card slide-right" style="--card-delay: 0.2s">
+          <div class="card-icon">◇</div>
+          <h3>Musings</h3>
+          <p>Quotes, passages, and ideas that have shaped how I think.</p>
+          <span class="card-arrow">→</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ─── ACTIVITIES ────────────────────────────────── -->
+    <section class="section-container animate-on-scroll">
+      <p class="section-title">Activities</p>
+      <!--
+        ✏️ To add or edit activities, find the <script> block
+           near the bottom of this file and update the `activities` array.
+      -->
+      <div class="activities-list" id="activities-list"></div>
+    </section>
+
+  </div><!-- /page-wrapper -->
+
+  <!-- ─── FOOTER ───────────────────────────────────────── -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <!-- ✏️ Replace href with your actual social profile URLs -->
+        <a class="icon-link" target="_blank" href="https://instagram.com/" title="Instagram">
+          <img src="./assets/icons/instagram.svg" class="footer-icon" alt="Instagram" />
+        </a>
+        <a class="icon-link" target="_blank" href="https://twitter.com/" title="Twitter / X">
+          <img src="./assets/icons/twitter.svg" class="footer-icon" alt="Twitter" />
+        </a>
+        <a class="icon-link" href="mailto:juliexzhg@stanford.edu" title="Email">
+          <img src="./assets/icons/mail.svg" class="footer-icon" alt="Email" />
+        </a>
+      </div>
+      <p class="footer-text">Julie Zhang &middot; Stanford University</p>
+    </div>
+  </footer>
+
+  <!-- ─── ACTIVITIES DATA ───────────────────────────────────
+       ✏️  ADD OR EDIT YOUR ACTIVITIES HERE
+       ════════════════════════════════════════════════════════
+
+       Each entry:
+         name   (required) – Club or org name
+         role   (optional) – Your role/position, e.g. "Vice President"
+         desc   (optional) – One-line description; leave "" to hide
+
+       To add: copy a block and paste above the closing ];
+       ═══════════════════════════════════════════════════── -->
+  <script>
+  const activities = [
+    {name: "Stanford Splash", role: "Financial Officer, Teacher", desc: "Classes for students, by studnets. Stanford Splash brings hundreds of middle and high school students to Stanford to learn from Stanford students. Spring 2026, I taught a class on the optomization mindset to 40 students and ~50 parents."},
+    {name: "Stanford Education Society", role: "Financial Officer", desc: ""},
+    {name: "Computer Science Student Council", role:"Financial Officer", desc:""},
+    // { name: "Stanford Law & Technology Association", role: "Member", desc: "" },
+    // { name: "AI Policy Working Group", role: "Co-lead", desc: "Drafting student policy briefs on AI governance." },
+  ];
+
+  // Renders the list — no need to edit below.
+  (function renderActivities() {
+    const container = document.getElementById('activities-list');
+    if (!container) return;
+
+    if (activities.length === 0) {
+      container.innerHTML = '<p style="color:var(--text-secondary);font-size:14px;padding:12px 0;">Coming soon.</p>';
+      return;
+    }
+
+    activities.forEach((item) => {
+      const el = document.createElement('div');
+      el.className = 'activity-item';
+      el.innerHTML = `
+        <div class="activity-item-inner">
+          <span class="activity-name">${item.name}</span>
+          ${item.desc ? `<span class="activity-desc">${item.desc}</span>` : ''}
+        </div>
+        ${item.role ? `<span class="activity-role">${item.role}</span>` : ''}
+      `;
+      container.appendChild(el);
+    });
+  })();
+  </script>
+
+</body>
+</html>

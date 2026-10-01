@@ -1,0 +1,76 @@
+/* =====================================================
+   FONTS
+   Import Inter from Google Fonts for a clean, modern feel.
+   Falls back to system sans-serif fonts if offline.
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,300;1,14..32,400&display=swap');
+
+body {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text, #111111);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-feature-settings: "kern" 1, "liga" 1, "ss01" 1;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* ─── Legacy class names (kept for compatibility) ──── */
+
+.nav-title {
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+}
+
+.button-text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.image-caption {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-secondary, #6B6560);
+  letter-spacing: 0.02em;
+}
+
+.main-title {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.subheader-text {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.body-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.project-card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.project-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
